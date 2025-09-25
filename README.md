@@ -1,12 +1,17 @@
 # CS 501 Individual Assignment 3 Question 1
 
-## Goal
-- Build a screen with a `Row` where one section takes 25% width and the other 75% width.
-- Inside the larger section, use a `Column` with 3 weighted children of different proportions (e.g., 2:3:5).
-- Add colors and text labels to visualize space usage.
+## Explanation
+- Demonstrates Jetpack Compose **weight-based layout**.
+- Screen is a `Row` split **25% / 75%**; the right side is a `Column` with **2:3:5** weighted blocks.
+- Colors and labels make each area’s proportion easy to see.
+
+## How to Use
+1. Open in Android Studio and run on an emulator/device (or use the `@Preview`).
+2. Observe: left pane ≈25% width; right pane shows three stacked blocks (2, 3, 5).
+3. Rotate/rescale: ratios stay the same because sizes are weight-driven.
 
 ## Implementation
-- Outer layout: `Row(Modifier.fillMaxSize())`
-- Left pane (25%): `Modifier.weight(1f).fillMaxHeight()`
-- Right pane (75%): `Modifier.weight(3f).fillMaxHeight()` with a `Column`
-- Inside the right `Column`: three `Box`es using `.weight(2f)`, `.weight(3f)`, `.weight(5f)`, each with a background color and centered label
+- Outer: `Row(Modifier.fillMaxSize())`
+- Left (25%): `Modifier.weight(1f).fillMaxHeight()`
+- Right (75%): `Modifier.weight(3f).fillMaxHeight()` + `Column`
+- Inside right `Column`: three `Box`es with `.weight(2f)`, `.weight(3f)`, `.weight(5f)` + centered labels
